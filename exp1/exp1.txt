@@ -1,0 +1,95 @@
+1. Assembly Language Program for Factorial Calculation:
+
+; Factorial Calculation Program
+; Input: R1 contains the number for which factorial is to be calculated
+; Output: R2 contains the factorial of the input number
+
+START:
+    MOV R2, #1      ; Initialize result to 1
+    MOV R3, #1      ; Initialize loop counter to 1
+    
+LOOP:
+    MUL R2, R2, R3  ; Multiply result by current loop counter
+    ADD R3, R3, #1  ; Increment loop counter
+    CMP R3, R1      ; Compare loop counter with input number
+    BLT LOOP        ; If loop counter < input number, continue loop
+
+    ; Factorial calculation completed, result is in R2
+    HALT            ; End program
+
+Symbol Table:
+Symbol   Address
+----------------
+START    0000
+LOOP     0001
+
+2. Assembly Language Program for Adding 3 Numbers:
+
+; Program to add three numbers
+; Input: R1, R2, R3 contain the three numbers to be added
+; Output: R4 contains the sum of the three numbers
+
+START:
+    ADD R4, R1, R2  ; Add first two numbers
+    ADD R4, R4, R3  ; Add third number to the sum
+    HALT            ; End program
+
+Symbol Table:
+Symbol   Address
+----------------
+START    0000
+
+3. Program to Read Text File, Count Lines and Blank Spaces, and Write Results to Another Text File:
+; Program to read a text file, count lines and blank spaces,
+; and write results to another text file
+
+START:
+    ; Open input file
+    ; (Assuming file is already opened and file handle is in R1)
+    
+    MOV R2, #0      ; Initialize line count
+    MOV R3, #0      ; Initialize blank space count
+    
+READ_LOOP:
+    ; Read a character from file into R4
+    ; Check if end of file reached, if so, jump to END_READ
+    
+    CMP R4, '\n'    ; Compare current character with newline character
+    BEQ INCREMENT_LINE_COUNT
+    
+    CMP R4, ' '     ; Compare current character with space character
+    BEQ INCREMENT_SPACE_COUNT
+    
+    ; Continue reading characters until end of file
+    
+    JMP READ_LOOP
+
+INCREMENT_LINE_COUNT:
+    ADD R2, R2, #1  ; Increment line count
+    JMP READ_LOOP   ; Continue reading
+    
+INCREMENT_SPACE_COUNT:
+    ADD R3, R3, #1  ; Increment blank space count
+    JMP READ_LOOP   ; Continue reading
+    
+END_READ:
+    ; Close input file
+    
+    ; Open output file
+    ; (Assuming file is already opened and file handle is in R5)
+    
+    ; Write line count to output file
+    ; Write blank space count to output file
+    
+    ; Close output file
+    
+    HALT            ; End program
+
+Symbol Table:
+Symbol          Address
+------------------------
+START           0000
+READ_LOOP       0001
+INCREMENT_LINE_COUNT   0002
+INCREMENT_SPACE_COUNT  0003
+END_READ        0004

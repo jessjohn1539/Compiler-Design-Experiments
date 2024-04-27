@@ -1,0 +1,14 @@
+Here's a step-by-step guide to compiling and linking your program:
+
+1. Compile each source file into object files:
+gcc -c lib_mylib1.c -o lib_mylib1.o
+gcc -c lib_mylib2.c -o lib_mylib2.o
+gcc -c driver.c -o driver.o
+
+2. Link the object files to create the executable:
+gcc lib_mylib1.o lib_mylib2.o driver.o -o driver
+
+3. Run the executable:
+driver
+or 
+./driver

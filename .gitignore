@@ -1,0 +1,9 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore output files
+*.out
+*.o
+*.h
+*.exe
+*.a

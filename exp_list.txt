@@ -1,0 +1,34 @@
+1. 
+    1. Write Assembly language program for a hypothetical
+       machine for factorial of a number in the format below. Also
+       construct symbol table for the same.
+    2. Write Assembly language program for adding 3 numbers.
+    3. Write a program that reads a text file and count number
+       of lines, blank spaces occurs and displays the results in
+       another text file.
+2. 
+    For any Assembly input for a hypothetical machine,
+    implement pass 1 by displaying Symbol Table, LiteralTable
+    and POOLTAB and intermediate code.
+3. 
+    Implement pass 2 by using the intermediate code
+    generated as input to pass 2 program which was
+    generated as output in pass 1.
+4.
+    Design and Implement Pass 1 of a Macro processor Task: Write a program
+    to read a given text file which can identify the macros in the program and
+    display MNT, MDT and Argument List Array
+5.
+    Create two libraries, and one program which will use those libraries.
+6.
+    Write lexical analyzer to identify tokens for c Language like identifier,
+    literals, open curly brace, end curly brace, semicolon,ignore white
+    space.
+7.
+    Write a program to recognize valid arithmetic
+    expression that uses operators + , -,* and / using YACC
+8. 
+    Implement Intermediate Code Generation and convert
+    infix expression to postfix expression.(Yacc parser)
+
+
